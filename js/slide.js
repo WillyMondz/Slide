@@ -104,6 +104,10 @@ export class Slide {
     this.slideArray[this.index.active].element.classList.add(this.activeClass);
   }
 
+  changeActiveClass() {
+    this.slideArray.forEach(item => item.element.classList.remove(this.activeClass));
+    this.slideArray[this.index.active].element.classList.add(this.activeClass);
+  }
   activePrevSlide() {
     if (this.index.prev !== undefined) this.changeSlide(this.index.prev);
   }
